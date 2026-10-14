@@ -1,0 +1,40 @@
+# Dungeon Siege DLL mods
+
+Three independent mods for the Steam x86 Dungeon Siege 1 executable: expanded resolution choices, native floating damage numbers, and 4x MSAA through dgVoodoo. A shared `version.dll` loader starts the two custom plugins.
+
+## Requirements
+
+Windows, Visual Studio or Build Tools with **Desktop development with C++**, x86 compiler and Windows SDK, and PowerShell 5.1 or newer. Compilation requires no game files. Installing the native patches requires Steam EXE SHA256 `C408EF77B39484D8AD82BA17859CF1E60B24D3BAF6D429283A52B886D67F33AB`.
+
+## Build
+
+Run `build.cmd` at the repository root for the loader and both native plugins. Run `antialias_mod/build.ps1` in PowerShell to fetch and verify the official dgVoodoo dependency. AA uses third-party closed-source DLLs; this repository contains its configuration and setup scripts only.
+
+Outputs: `mod_loader/build/version.dll`, `resolution_mod/build/ds_resolution.dll`, `damage_numbers_mod/build/ds_damage_numbers.dll`, and `antialias_mod/build/{DDraw,D3DImm}.dll`.
+
+## Install the package
+
+Open the repository's **Actions** tab, choose a successful **Build mod package** run, and download the **dungeon-siege-mods** artifact. Close the game and unzip it directly into the game folder beside `DungeonSiege.exe`, replacing existing mod files if prompted. Start the game normally; no scripts or mod folders are required.
+
+The downloaded ZIP contains exactly these six files at its root:
+
+```text
+D3DImm.dll
+DDraw.dll
+dgVoodoo.conf
+ds_damage_numbers.dll
+ds_resolution.dll
+version.dll
+```
+
+The workflow runs on pushes, pull requests, and manual dispatch. It compiles all three native DLLs on Windows, downloads and verifies the pinned official dgVoodoo dependency, and uploads the six files as one ZIP artifact. GitHub creates the ZIP when downloading the artifact, so there is no nested archive to extract.
+
+## Install from a source build
+
+Place the four mod folders directly inside your Dungeon Siege installation directory; the scripts target their parent directory. Close the game, then run `mod_loader/install.ps1`, `resolution_mod/install.ps1`, `damage_numbers_mod/install.ps1`, and `antialias_mod/install.ps1` in order. Each plugin can be disabled independently with its `disable.ps1`.
+
+For a standalone checkout, build there first and then copy the four folders into the game directory before running those scripts.
+
+## Disclaimer
+
+These mods are provided **as is**, without any warranty. Use them at your own risk. I accept no responsibility or liability for any damage, data loss, corrupted saves, crashes, or other problems caused by downloading, installing, or using these mods. Back up your game files and saves before installing.
