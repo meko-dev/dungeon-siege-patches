@@ -10,10 +10,4 @@ Supported additions:
 - 2560x1080, 2560x1440 (QHD/1440p, commonly called 2K), 2560x1600
 - 3440x1440, 3840x1600, 3840x2160 (4K UHD), 5120x1440
 
-The installed plugin contains only resolution code. `version.dll` is now a separate shared loader; see `../mod_loader/README.md`. Damage numbers and dgVoodoo anti-aliasing use their own DLLs.
-
-Close the game and run `install.ps1` to install/update only this plugin; the shared loader must already be installed. Run `disable.ps1` to disable only resolution. Re-enable with `install.ps1`. Do not restore historical version.dll backups to disable this plugin; that would replace the shared loader.
-
-Run `build.cmd` to produce `build/ds_resolution.dll` using Visual Studio C++ x86 tools. No game files are needed to compile. Static CRT; no external Visual C++ runtime dependency.
-
 Supported Steam EXE SHA256: `C408EF77B39484D8AD82BA17859CF1E60B24D3BAF6D429283A52B886D67F33AB`. Other builds reject the patches. Source: `version.cpp` (historical filename, now resolution plugin code).

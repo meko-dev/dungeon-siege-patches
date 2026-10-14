@@ -4,6 +4,4 @@
 
 Build with `build.cmd` using Visual Studio C++ x86 tools. Output: `build/ds_damage_numbers.dll`, static CRT. No game files or resolution sources are required to compile.
 
-Close the game. Install the shared loader first, then run `install.ps1`. Run `disable.ps1` to disable only damage numbers; reinstall to re-enable. Resolution and AA remain independent.
-
 Supported Steam EXE SHA256: `C408EF77B39484D8AD82BA17859CF1E60B24D3BAF6D429283A52B886D67F33AB`. Source: `damage.cpp`.
