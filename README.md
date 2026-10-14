@@ -3,7 +3,7 @@
 Three independent mods for the Steam x86 Dungeon Siege 1 executable: expanded resolution choices, native floating damage numbers, and 4x MSAA through dgVoodoo. A shared `version.dll` loader starts the two custom plugins.
 
 ![More available resolutions](/screenshots/full-hd.png?raw=true "More available resolutions")
-![Anti-alias](/screenshots/anti-alias.png?raw=true "Anti-alias")
+![Anti-alias](/screenshots/aa-compare.png?raw=true "Anti-alias")
 ![Floating Damage Numbers](/screenshots/damage.png?raw=true "Floating Damage Numbers")
 
 ## Requirements
